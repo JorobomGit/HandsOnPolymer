@@ -1,0 +1,39 @@
+﻿Categorías de productos con subcategorías, ecommerce
+
+
+Primera vista:
+
+Varias categorías
+Varias subcategorías con items en scroll
+
+
+Segunda vista:
+
+Carrito de la compra
+Le das a comprar, lo añade al carrito
+
+
+
+
+LOS DATOS PERSISTEN EN LOCAL (LOCALSTORAGE)
+SOLO SE LLEVAN A SERVIDOR (EN OTRA VISTA) CUANDO SE PAGAN MEDIANTE LOGIN Y PASSWORD
+
+
+
+Componentes:
+
+Scaffolding de layout donde se muestra la información.
+Carrusel de items
+Componente de iron-ajax para pedir datos al servidor
+Componente de sesión
+Componente de login
+
+
+SERVIDOR:
+
+Categorias
+Subcategorias
+Items
+Usuarios con coleccion de compras
+
+Token de sesión desde el server tras POST del user JWT.JS
