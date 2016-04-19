@@ -1,0 +1,17 @@
+1-------
+
+Yeoman para scaffolding
+o github/seed-element.org a nivel más bajo
+
+2-------
+
+Polymer Starter Kit
+
+3-------
+
+Desplegar con grunt,gulp
+
+4-------
+
+Publicar con bower
+

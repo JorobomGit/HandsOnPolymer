@@ -1,0 +1,11 @@
+# Node modules
+node_modules/
+
+# Bower modules
+bower_components/
+
+# Archivos del SO
+.thumbs
+
+# CSS
+style.css
