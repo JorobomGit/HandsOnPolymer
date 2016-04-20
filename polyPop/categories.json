@@ -1,9 +1,11 @@
 {
     "categories": [{
         "name": "Comida",
-        "subcategories": ["marisco", "dulce", "vegano"]
+        "subcategories": ["marisco", "dulce", "vegano"],
+        "icon": "http://www.icon2s.com/wp-content/uploads/2014/06/FoodDrink-apple2-icon.png"
     }, {
         "name": "Motor",
-        "subcategories": ["coche", "motorbike"]
+        "subcategories": ["coche", "motorbike"],
+        "icon": "http://www.onlinehai.in/logo/5512291Bus-128.png"
     }]
 }

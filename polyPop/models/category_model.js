@@ -4,7 +4,8 @@ var mongoose = require('mongoose');
 
 var categorySchema = mongoose.Schema({
     name: String,
-    subcategories: Array
+    subcategories: Array,
+    icon: String
 });
 
 
