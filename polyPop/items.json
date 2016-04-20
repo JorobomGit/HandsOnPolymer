@@ -1,0 +1,11 @@
+{
+    "items": [{
+        "name": "renault",
+        "picture": "imagenrenault.jpg",
+        "price": 50000
+    }, {
+        "name": "opel",
+        "picture": "imagenopel.jpg",
+        "price": 25000
+    }]
+}

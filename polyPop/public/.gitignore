@@ -7,11 +7,5 @@ bower_components/
 # Archivos del SO
 .thumbs
 
-# DB
-
-db/
-
-# Apidoc
-
-apidoc/
-server/coffeePopServer/public/dist/app.js
+# CSS
+style.css

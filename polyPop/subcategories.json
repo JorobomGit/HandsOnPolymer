@@ -1,0 +1,9 @@
+{
+    "subcategories": [{
+        "name": "marisco",
+        "items": ["gambas", "langosta"]
+    }, {
+        "name": "coche",
+        "items": ["renault", "opel"]
+    }]
+}

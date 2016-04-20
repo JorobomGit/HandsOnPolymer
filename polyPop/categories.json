@@ -1,0 +1,9 @@
+{
+    "categories": [{
+        "name": "Comida",
+        "subcategories": ["marisco", "dulce", "vegano"]
+    }, {
+        "name": "Motor",
+        "subcategories": ["coche", "motorbike"]
+    }]
+}
