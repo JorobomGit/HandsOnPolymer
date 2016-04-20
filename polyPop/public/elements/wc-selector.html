@@ -1,0 +1,66 @@
+<dom-module id="wc-selector">
+    <template id="selector">
+        <style>
+        paper-menu {
+            --paper-menu-selected-item: {
+                color: var(--primary-color);
+            }
+            --paper-menu-focused-item-after: {
+                background: var(--primary-color);
+            }
+        }
+        
+        paper-menu iron-icon {
+            margin-right: 33px;
+            opacity: 0.54;
+        }
+        
+        paper-menu a {
+            @apply(--layout-horizontal);
+            @apply(--layout-center);
+            text-decoration: none;
+            color: var(--menu-link-color);
+            font-family: 'Roboto', 'Noto', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 24px;
+            min-height: 48px;
+            padding: 0 16px;
+        }
+        </style>
+        <!-- Drawer Toolbar -->
+        <paper-toolbar id="drawerToolbar">
+            <span class="menu-name">Categories</span>
+        </paper-toolbar>
+        <paper-menu class="app-menu" attr-for-selected="data-route" selected="[[route]]">
+            <template is="dom-repeat" items="{{data}}">
+                <a data-route="{{item.name}}" href="{{baseUrl}}" on-tap="onTap">
+                    <iron-icon src="{{item.icon}}"></iron-icon>
+                    <span>{{item.name}}</span>
+                </a>
+            </template>
+        </paper-menu>
+    </template>
+    <script>
+    (function() {
+        Polymer({
+            is: 'wc-selector',
+            ready: function() {
+                console.log("CARGA")
+            },
+            properties: {
+                data: {
+                    type: Array,
+                    notify: true
+                }
+            },
+            onTap: function(e) {
+                console.log("onTap");
+                console.log("Data: ", e.target);
+            }
+        });
+    })();
+    </script>
+</dom-module>

@@ -2,8 +2,20 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var Category = mongoose.model('Category');
+var Subcategory = mongoose.model('Subcategory');
 
 var crypto = require('crypto');
+
+
+router.get('/category/:name', function(req, res) {
+
+    Subcategory.list(req, function(err, rows) {
+        if (err) {
+            return res.json({ result: false, err: err });
+        }
+        res.json({ result: true, rows: rows });
+    });
+});
 
 
 /**
