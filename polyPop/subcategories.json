@@ -5,5 +5,9 @@
     }, {
         "name": "coche",
         "items": ["renault", "opel"]
+    },
+    {
+        "name": "dulce",
+        "items": ["klav kalash", "jeje"]
     }]
 }

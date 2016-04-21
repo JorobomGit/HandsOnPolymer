@@ -11,6 +11,9 @@ var categorySchema = mongoose.Schema({
 
 categorySchema.statics.list = function(req, cb) {
     var filtro = {};
+    if(req.params.name != undefined){
+        filtro['name'] = req.params.name;
+    }
     var query = Category.find(filtro);
     var sort = req.query.sort || 'name';
     query.sort([[sort, 'descending']]);
