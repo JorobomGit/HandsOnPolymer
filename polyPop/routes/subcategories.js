@@ -52,9 +52,9 @@ router.get('/subcategory/:name', function(req, res) {
 
         /*En este punto, tenemos subcategoria con sus items*/
         var req_aux = req;
+        req_aux.params['name'] = undefined;
         req_aux.params['itemFlag'] = 1;
         req_aux.params['items'] = rows[0].items;
-        console.log(rows);
 
         Item.list(req_aux, function(err, rows2){
             if (err){

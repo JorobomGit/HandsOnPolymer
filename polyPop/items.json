@@ -1,11 +1,23 @@
 {
     "items": [{
         "name": "renault",
-        "picture": "imagenrenault.jpg",
+        "picture": "http://www.abc.es/Media/201201/02/renault--644x362.jpg",
         "price": 50000
     }, {
         "name": "opel",
-        "picture": "imagenopel.jpg",
+        "picture": "http://www.coches.com/fotos_historicas/opel/Mokka-2012/high_opel_mokka-2012_r15.jpg",
         "price": 25000
+    }, {
+        "name": "gambas",
+        "picture": "http://www.ediciona.com/portafolio/image/9/1/0/1/gambasgr_1019.jpg",
+        "price": 10
+    }, {
+        "name": "langosta",
+        "picture": "http://cdn5.dibujos.net/dibujos/pintados/201033/349c830c3735b187442a681207d9d737.png",
+        "price": 20
+    }, {
+        "name": "klav kalash",
+        "picture": "http://25.media.tumblr.com/tumblr_m7fuk3FcH91rzn04ho1_500.jpg",
+        "price": 1
     }]
 }

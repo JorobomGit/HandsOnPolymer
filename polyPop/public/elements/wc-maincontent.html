@@ -12,24 +12,21 @@
         }
         </style>
         <!--Cada subcategoria-->
-        <template is="dom-repeat" items="{{data}}">        
-            <!--Obtenemos objetos con iron-ajax-->
+        <template is="dom-repeat" items="{{data}}">
+            <!-- Obtenemos ITEMS de una subcategoría-->
             <iron-ajax auto url="http://localhost:3000/subcategories/subcategory/{{item.name}}" last-response="{{items}}" handle-as="json">
             </iron-ajax>
-
-
+            Subcategory: {{item.name}}
             <paper-material>
-                <wc-item></wc-item>
+                <wc-items data="{{items.rows}}"></wc-items>
             </paper-material>
         </template>
-
     </template>
     <script>
     (function() {
         Polymer({
             is: 'wc-maincontent',
-            ready: function() {
-            },
+            ready: function() {},
             properties: {
                 data: {
                     type: Array,

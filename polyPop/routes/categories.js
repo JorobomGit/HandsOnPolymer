@@ -18,9 +18,11 @@ router.get('/category/:name', function(req, res) {
         /*En este punto, tenemos rows con las subcategorias*/
         /*Ahora queremos devolver todas las subcategorias con sus items*/
         var req_aux = req;
+        req_aux.params['name'] = undefined;
         req_aux.params['subFlag'] = 1;
         req_aux.params['subcategories'] = rows[0].subcategories;
 
+        console.log("HILAA::" , req_aux.params);
         Subcategory.list(req_aux, function(err, rows2){
             if (err){
                 return res.json({ result: false, err: err});

@@ -54,14 +54,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <template is="dom-bind" id="app">
         <paper-drawer-panel id="paperDrawerPanel">
             <!-- Drawer Scroll Header Panel -->
-            <!-- Drawer Content -->
+            <!-- Obtenemos CATEGORIAS -->
             <iron-ajax auto url="http://localhost:3000/categories" last-response="{{categories}}" handle-as="json">
             </iron-ajax>
+
+
+            <!-- Pintamos CATEGORIAS -->
             <paper-scroll-header-panel drawer fixed>
                 <wc-selector data="{{categories.rows}}" cat-selected='{{catSelected}}'></wc-selector>
             </paper-scroll-header-panel>
+
+
+            <!-- Obtenemos SUBCATEGORIAS -->
             <iron-ajax auto url="http://localhost:3000/categories/category/{{catSelected}}" last-response="{{subcategories}}" handle-as="json">
             </iron-ajax>
+
+
+
             <!-- Main Area -->
             <paper-scroll-header-panel main id="headerPanelMain" condenses keep-condensed-header>
                 <!-- Main Toolbar -->
@@ -84,6 +93,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <div class="content">
                     <iron-pages attr-for-selected="data-route" selected="{{route}}">
                         <section data-route="home" tabindex="-1">
+                            <!-- Pintamos SUBCATEGORIAS -->
                             <wc-maincontent data="{{subcategories.rows}}"></wc-maincontent>
                         </section>
                     </iron-pages>

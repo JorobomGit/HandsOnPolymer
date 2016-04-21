@@ -1,0 +1,28 @@
+<dom-module id="wc-items">
+    <template id="items">
+        <template is="dom-repeat" items="{{data}}">
+            <paper-card heading="{{ item.name }}" image="{{ item.picture }}">
+                <div class="card-content">
+                    {{ item.price }}
+                </div>
+                <div class="card-actions">
+                    <paper-button>Buy</paper-button>
+                </div>
+            </paper-card>
+        </template>
+    </template>
+    <script>
+    (function() {
+        Polymer({
+            is: 'wc-items',
+            ready: function() {},
+            properties: {
+                data: {
+                    type: Array,
+                    notify: true
+                }
+            }
+        });
+    })();
+    </script>
+</dom-module>
