@@ -36,7 +36,7 @@
         </paper-toolbar>
         <paper-menu class="app-menu" attr-for-selected="data-route" selected="[[route]]">
             <template is="dom-repeat" items="{{data}}">
-                <a data-route="{{item.name}}" href="{{baseUrl}}" on-tap="onTap">
+                <a data-route="{{item.name}}" href="{{baseUrl}}" on-click="onTap" name="{{item.name}}">
                     <iron-icon src="{{item.icon}}"></iron-icon>
                     <span>{{item.name}}</span>
                 </a>
@@ -54,11 +54,19 @@
                 data: {
                     type: Array,
                     notify: true
+                },
+                catSelected: {
+                    type: String,
+                    notify: true,
+                    value: 'Motor'
                 }
             },
             onTap: function(e) {
                 console.log("onTap");
-                console.log("Data: ", e.target);
+                console.log("Data: ", e.target.name);
+
+                this.catSelected = e.target.name;
+                
             }
         });
     })();

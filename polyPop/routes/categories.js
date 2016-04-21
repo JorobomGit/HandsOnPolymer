@@ -25,7 +25,7 @@ router.get('/category/:name', function(req, res) {
             if (err){
                 return res.json({ result: false, err: err});
             }
-            res.json({ result: true, subcategories: rows2 });
+            res.json({ result: true, rows: rows2 });
         })
     });
 });

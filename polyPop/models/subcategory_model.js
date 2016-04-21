@@ -10,10 +10,13 @@ var subcategorySchema = mongoose.Schema({
 
 subcategorySchema.statics.list = function(req, cb) {
     var filtro = {};
+    if (req.params.name != undefined) {
+        filtro['name'] = req.params.name;
+    }
     if (req.params.subFlag == 1) {
         /*Buscamos por subcategorias con OR*/
-        filtro['$or'] = [];        
-        for(var i=0; i<req.params.subcategories.length; i++){            
+        filtro['$or'] = [];
+        for (var i = 0; i < req.params.subcategories.length; i++) {
             var aux = {
                 name: req.params.subcategories[i]
             }

@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var Subcategory = mongoose.model('Subcategory');
+var Item = mongoose.model('Item');
 
 var crypto = require('crypto');
 
@@ -40,13 +41,27 @@ var crypto = require('crypto');
  *        "err": "DBError"
  *     }
  */
-router.get('/', function(req, res) {
+router.get('/subcategory/:name', function(req, res) {
 
+    console.log(req.params.name);
+    /*Teniendo el nombre de la subcategoria, obtenemos listado de items*/
     Subcategory.list(req, function(err, rows) {
         if (err) {
             return res.json({ result: false, err: err });
         }
-        res.json({ result: true, rows: rows });
+
+        /*En este punto, tenemos subcategoria con sus items*/
+        var req_aux = req;
+        req_aux.params['itemFlag'] = 1;
+        req_aux.params['items'] = rows[0].items;
+        console.log(rows);
+
+        Item.list(req_aux, function(err, rows2){
+            if (err){
+                return res.json({ result: false, err: err});
+            }
+            res.json({ result: true, rows: rows2 });
+        })
     });
 });
 

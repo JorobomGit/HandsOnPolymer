@@ -1,0 +1,42 @@
+<dom-module id="wc-maincontent">
+    <template id="maincontent">
+        <style>
+        paper-material {
+            border-radius: 2px;
+            height: 100%;
+            padding: 16px 0 16px 0;
+            width: calc(98.66% - 16px);
+            margin: 16px auto;
+            background: white;
+            text-align: center;
+        }
+        </style>
+        <!--Cada subcategoria-->
+        <template is="dom-repeat" items="{{data}}">        
+            <!--Obtenemos objetos con iron-ajax-->
+            <iron-ajax auto url="http://localhost:3000/subcategories/subcategory/{{item.name}}" last-response="{{items}}" handle-as="json">
+            </iron-ajax>
+
+
+            <paper-material>
+                <wc-item></wc-item>
+            </paper-material>
+        </template>
+
+    </template>
+    <script>
+    (function() {
+        Polymer({
+            is: 'wc-maincontent',
+            ready: function() {
+            },
+            properties: {
+                data: {
+                    type: Array,
+                    notify: true
+                }
+            }
+        });
+    })();
+    </script>
+</dom-module>
