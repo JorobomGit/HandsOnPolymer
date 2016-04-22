@@ -1,7 +1,15 @@
 <dom-module id="wc-items">
     <template id="items">
+        <style is="custom-style">
+        #example-sizing-cover {
+            width: 350px;
+            height: 350px;
+            background: #ddd;
+        }
+        </style>
         <template is="dom-repeat" items="{{data}}">
-            <paper-card heading="{{ item.name }}" image="{{ item.picture }}">
+            <paper-card heading="{{ item.name }}">
+                <iron-image sizing="cover" id="example-sizing-cover" alt="The Polymer logo." src="{{ item.picture }}"></iron-image>
                 <div class="card-content">
                     {{ item.price }}
                 </div>

@@ -1,0 +1,27 @@
+<dom-module id="wc-subcategory">
+    <template id="subcategory">
+        <!-- Obtenemos ITEMS de una subcategoría-->
+        <iron-ajax auto url="http://localhost:3000/subcategories/subcategory/{{data.name}}" last-response="{{items}}" handle-as="json">
+        </iron-ajax>
+        Subcategory: {{data.name}}
+        <paper-material>
+            <paper-button raised noink>Left</paper-button>
+            <wc-items data="{{items.rows}}"></wc-items>
+            <paper-button raised noink>Right</paper-button>
+        </paper-material>
+    </template>
+    <script>
+    (function() {
+        Polymer({
+            is: 'wc-subcategory',
+            ready: function() {},
+            properties: {
+                data: {
+                    type: Array,
+                    notify: true
+                }
+            }
+        });
+    })();
+    </script>
+</dom-module>
